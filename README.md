@@ -17,5 +17,15 @@ The SDLC we have chosen is agile as we believe that for a small project such as 
 
 ## File structure Explained.
 
-1. All the 
+*All the application files are stored in the ```terminal_app``` directory , and all the other files are the required documentation for this project.*
+
+- All the questions are stored in 2 json files.
+
+  - questions.json - Has all the questionares, that help us record the patients mental score.
+
+  - Responses.json - Has all the responses that we expect our app to give back , if a user asks something.
+
+- ```app.py``` - This file imports in all the other functions , and basically is a clean file , that we need to run each time to run the app.
+
+- ```functions.py``` - Since this app , makes use of no classes and just functions, all the required functions are in this file.
 

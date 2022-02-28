@@ -7,9 +7,7 @@ inputresp = "";
 
 keep_asking = True;
 
-
-inputresp = input()
-output = returnResp(inputresp);
+output = returnResp();
 print(output)
 	
 print("Thanks Goodbye.")

@@ -20,8 +20,10 @@ It does the following tasks first :
 1. Collect user info 
 2. Take the user through a questionare to see if he can possibly have depression.
 """
-def returnResp(inputresp):
+def returnResp():
 	recordPatientInfo()
+	print("What can i help you with");
+	inputresp = input()
 	for x in responses:
 		if x in inputresp: ## if response key  in string 
 			resp =  responses[x];
@@ -50,8 +52,7 @@ def recordPatientInfo():
 	name = input()
 	print(f"Welcome {name}, what is your age ?");
 	age = input()
-	print("What can i help you with");
-
+	
 	info = [name, age]
 
 	return info
