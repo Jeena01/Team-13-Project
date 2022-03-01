@@ -5,7 +5,6 @@ from functions import *;
 ## Run this file to start the application.
 
 output = returnResp();
-print(output)
 	
 print("Thanks Goodbye.")
 

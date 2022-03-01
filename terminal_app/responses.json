@@ -1,8 +1,10 @@
 {
 
-	"name": "Hi {name_user}, Im going to ask you a series of questions to access the possibility of you suffering from depression. Is that okay with you?",
+	"name": "Hi {name}, Im going to ask you a series of questions to access the possibility of you suffering from depression. Is that okay with you?",
 
-	"suffering":  "Hi {name_user}, I’m going to ask you a series of questions to access the possibility of you suffering from depression.",
+	"suffering":  "Hi {name}, I’m going to ask you a series of questions to access the possibility of you suffering from depression.",
+
+	"depression":  "Hi {name}, I’m going to ask you a series of questions to access the possibility of you suffering from depression.",
 
 	"symptoms":" People with mild depression may experience the following: feelings of sadness, loss of appetite, reduced energy levels, sleeping problems, and difficulties with concentration. Mild depression is associated with a less intense feeling with those symptoms. It is highly recommended people with mild depression seek treatment. Do you have any more questions?",
 

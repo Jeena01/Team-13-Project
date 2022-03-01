@@ -24,18 +24,20 @@ def returnResp():
 	recordPatientInfo()
 	print("What can i help you with");
 	inputresp = input()
-	if proccesInput(inputresp) != None:
-    		return proccesInput(inputresp);
+	if proccesInput(inputresp) == 'done':
+    		return None;
+	elif proccesInput(inputresp) != None:
+			return proccesInput(inputresp);
 	else:
 		print("I am not sure I understand your issue, please try rephrasing it in a different way\n");
-		return helper()
+		return helper();
 
 def proccesInput(inputresp):
 	for x in responses:
 		if x in inputresp: ## if response key  in string 
 			resp =  responses[x];
-			if (x == "suffering"):
-				score = recordMentalHist()
+			if (x == "suffering" or x == "depression"):
+				print(resp); score = recordMentalHist();
 				print("Do you have any other question regarding your diagnostics ?(yes/no)")
 				resp = input()
 				if("no" in resp):
@@ -49,9 +51,25 @@ def proccesInput(inputresp):
 						answerRestQuestions();
 					finally:
 							print(f"Your Mental Score is {score}.")
+			elif (x == "everything"):
+    				return resp;
 			else:
-				return resp;
-	return None
+				print(resp);
+				answer = input();
+				if ('yes' in answer):
+					return newQuestion();
+				else: 
+					return 'done';
+	return None;
+
+def newQuestion():
+	print("What can i help you with");
+	inputresp = input()
+	if proccesInput(inputresp) != None:
+    		return proccesInput(inputresp);
+	else:
+		print("I am not sure I understand your issue, please try rephrasing it in a different way\n");
+		return helper();
 
 def helper():
 	inputresp = input();
