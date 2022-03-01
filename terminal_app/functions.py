@@ -44,7 +44,6 @@ def proccesInput(inputresp):
 				if("no" in resp):
     					return f"Your Mental Score is {score}."
 				else:
-					print(f"Your Mental Score is {score}.")
 					try:
 						answerRestQuestions();
 					except KeyError:
