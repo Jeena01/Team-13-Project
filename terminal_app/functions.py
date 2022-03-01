@@ -6,7 +6,7 @@ responses = 0
 questions = 0
 score = 0;			## initially ever user starts with a mental score of zero.
 ## at the end a higher score means, a user most likely has depression.
-total_questions = 3	## How many questions from the json file, we want to ask.
+total_questions = 20	## How many questions from the json file, we want to ask.
 
 ## These 2 files below have the questions stored as a dictionary.
 with open('./responses.json',encoding='utf-8') as json_file:
