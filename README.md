@@ -2,7 +2,7 @@
 
 ## Project Description
 
-=======
+
 We are developing a conversational agent for a psychiatrist that responds to a user with mental health concerns. The agent will be able to carry a basic conversation with the user about their feelings and will be able to provide tests for disorders that it detects in the user.
 
 
@@ -14,7 +14,7 @@ We are developing a conversational agent for a psychiatrist that responds to a u
 4. How to run the script file:
    - Windows - run the command in terminal ``` py app.py```
    - MacOs - run the command in terminal ```python3 app.py```
-=======
+
 
 ## File Structure Explaination:
 
