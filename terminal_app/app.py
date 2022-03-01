@@ -7,6 +7,3 @@ from functions import *;
 output = returnResp();
 	
 print("Thanks Goodbye.")
-
-
-
