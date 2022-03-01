@@ -24,27 +24,71 @@ def returnResp():
 	recordPatientInfo()
 	print("What can i help you with");
 	inputresp = input()
+	if checkInput(inputresp):
+			proccesInput(inputresp);
+			while ('yes' in input()):
+    				newQuestion();
+	else:
+		print("I am not sure I understand your issue, please try rephrasing it in a different way\n");
+		return helper();
+	return
+
+def proccesInput(inputresp):
 	for x in responses:
 		if x in inputresp: ## if response key  in string 
 			resp =  responses[x];
-			if (x == "suffering"):
-				score = recordMentalHist()
+			if (x == "suffering" or x == "depression"):
+				print(resp); score = recordMentalHist();
 				print("Do you have any other question regarding your diagnostics ?(yes/no)")
 				resp = input()
 				if("no" in resp):
-					return f"Your Mental Score is {score}."
+    					return f"Your Mental Score is {score}."
 				else:
-					print(f"Your Mental Score is {score}.")
 					try:
 						answerRestQuestions();
 					except KeyError:
 						print("Unfortunately i do not have the response for that. Anything Else ?")
 						answerRestQuestions();
 					finally:
-						 print(f"Your Mental Score is {score}.")
+							print(f"Your Mental Score is {score}.")
 			else:
-				return resp;
+				print(resp);
+				return
+	return
 
+def checkInput(input):
+		found = False;
+		for x in responses:
+			if x in input: ## if response key  in string 
+				found = True;
+		return found
+
+def newQuestion():
+		print("What can i help you with");
+		inputresp = input()
+		if checkInput(inputresp):
+			proccesInput(inputresp);
+		else:
+			print("I am not sure I understand your issue, please try rephrasing it in a different way\n");
+			return helper();
+		return
+
+def helper():
+	inputresp = input();
+	if checkInput(inputresp):
+		proccesInput(inputresp);
+		while ('yes' in input()):
+    				newQuestion();
+	else:
+		print("I still canno't understand, try using keywords like symptoms, medication, treatment, etc");
+		inputresp = input()
+	if checkInput(inputresp):	
+		proccesInput(inputresp);
+		while ('yes' in input()):
+    				newQuestion();
+	else:
+		print("I'm sorry, I am not able to help you with that");
+		return
 
 def recordPatientInfo():
 	## This method records the patient information, and can be further modified to collect any other information that we may be interested in collecting in the future.
@@ -57,8 +101,6 @@ def recordPatientInfo():
 
 	return info
 	
-
-
 def recordMentalHist():
 	## ask all the questions from the questions.json, file.
 	print("Ok, for these questions reply with a score from 1-4 (1 meaning a little of the time, 2 meaning some of the time, 3 meaning good part of the time, and 4 meaning most of the time) Do you understand the scoring?")
