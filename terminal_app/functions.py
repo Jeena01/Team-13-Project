@@ -22,7 +22,7 @@ It does the following tasks first :
 """
 def returnResp():
 	recordPatientInfo()
-	print("What can i help you with");
+	print("What can I help you with");
 	inputresp = input()
 	if checkInput(inputresp):
 			proccesInput(inputresp);
@@ -39,7 +39,7 @@ def proccesInput(inputresp):
 			resp =  responses[x];
 			if (x == "suffering" or x == "depression"):
 				print(resp); score = recordMentalHist();
-				print("Do you have any other question regarding your diagnostics ?(yes/no)")
+				print("Do you have any other question regarding your diagnostics?(yes/no)")
 				resp = input()
 				if("no" in resp):
     					return f"Your Mental Score is {score}."
@@ -47,7 +47,7 @@ def proccesInput(inputresp):
 					try:
 						answerRestQuestions();
 					except KeyError:
-						print("Unfortunately i do not have the response for that. Anything Else ?")
+						print("Unfortunately I do not have the response for that. Anything Else?")
 						answerRestQuestions();
 					finally:
 							print(f"Your Mental Score is {score}.")
@@ -64,7 +64,7 @@ def checkInput(input):
 		return found
 
 def newQuestion():
-		print("What can i help you with");
+		print("What can I help you with");
 		inputresp = input()
 		if checkInput(inputresp):
 			proccesInput(inputresp);
@@ -80,7 +80,7 @@ def helper():
 		while ('yes' in input()):
     				newQuestion();
 	else:
-		print("I still canno't understand, try using keywords like symptoms, medication, treatment, etc");
+		print("I still cannot understand, try using keywords like symptoms, medication, treatment, etc");
 		inputresp = input()
 	if checkInput(inputresp):	
 		proccesInput(inputresp);
@@ -117,7 +117,7 @@ def recordMentalHist():
 		print("You do not have any mental disorder.")
 	elif(score < 50):
 		print("You have mild depression")
-	elif(score<100):
+	else:
 		print("You have a serious case of depression please see a doctor")
 	
 	return score;
@@ -135,11 +135,11 @@ def answerRestQuestions():
 	hasResp = False
 	for x in responses:
 		if x in resp:
-			print(questions[x])
+			print(responses[x])
 			hasResp = True
 
 	if(not hasResp):
-		print("Unfortunately i do not have the response for that.")
+		print("Unfortunately I do not have the response for that.")
 
 	print("Do you have any other questions ?")
 	resp = input()
